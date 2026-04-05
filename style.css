@@ -1,0 +1,304 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ff6600; /* Laranja vibrante */
+    --bg: #0f0f0f;      /* Fundo quase preto */
+    --surface: #1a1a1a; /* Superfícies secundárias */
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px 0;
+    background: rgba(15, 15, 15, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.3s transform;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Seções Gerais */
+section {
+    padding: 100px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+}
+
+/* Sobre e Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.skill-tag {
+    background: var(--surface);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--primary);
+    font-size: 0.9rem;
+}
+
+/* Grid de Projetos */
+.grid-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    border: 1px solid var(--primary);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+/* Footer */
+footer {
+    padding: 80px 0;
+    background: #050505;
+    text-align: center;
+}
+
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: var(--primary);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #444;
+    margin-top: 40px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; }
+}
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left; /* Alinha o texto à esquerda para dar espaço à imagem */
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px; /* Tamanho máximo da imagem */
+    border-radius: 20px; /* Bordas arredondadas para combinar com o estilo */
+    border: 3px solid var(--primary); /* Borda laranja fina para dar destaque */
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2); /* Sombra neon laranja suave */
+}
+
+/* Ajuste para celular (um embaixo do outro) */
+@media (max-width: 768px) {
+    .hero-layout {
+        flex-direction: column-reverse; /* Imagem fica em cima no celular */
+        text-align: center;
+    }
+    
+    .hero-image img {
+        max-width: 300px;
+    }
+}
+.hero-image img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Controla a animação suave */
+}
+
+.hero-image img:hover {
+    transform: translateY(-15px) scale(1.03); /* 'Y(-15px)' move para cima e 'scale' aumenta um pouquinho */
+    box-shadow: 0 20px 50px rgba(255, 102, 0, 0.4); /* Deixa a sombra laranja mais forte e espalhada */
+    cursor: pointer; /* Muda o ponteiro do mouse para indicar interatividade */
+}
+.skill-tag {
+    background: var(--surface);
+    padding: 10px 22px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 102, 0, 0.3); /* Borda laranja discreta no início */
+    font-size: 0.9rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação com um leve 'balanço' */
+    cursor: default;
+    display: inline-block;
+}
+.skill-tag:hover {
+    background-color: var(--primary); /* Fundo fica todo laranja */
+    color: #ffffff;                      /* Texto fica preto para dar leitura no laranja */
+    transform: scale(1.1) rotate(2deg); /* Aumenta 10% e inclina 2 graus */
+    border-color: #fff;               /* Borda fica branca para brilhar */
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.6); /* Efeito de brilho (glow) laranja */
+}
+.social-links-clean {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaço maior entre os textos */
+}
+
+/* Estilo base do link (Branco e sem bordas) */
+.link-minimal {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease; /* Suaviza a cor e o zoom */
+    display: inline-block;
+    background: none;
+    border: none;
+}
+
+/* Efeito ao passar o mouse: Cor Laranja + Zoom */
+.link-minimal:hover {
+    color: var(--primary); /* Muda de branco para laranja */
+    transform: scale(1.15); /* Leve zoom para frente */
+    cursor: pointer;
+    text-shadow: 0 0 15px rgba(255, 102, 0, 0.4); /* Brilho suave no texto */
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .social-links-clean {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+.logo {
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: color 0.5s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--primary); /* Muda para laranja */
+    transform: translateX(5px); /* Dá um leve empurrãozinho para a direita */
+}
